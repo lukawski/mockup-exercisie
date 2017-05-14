@@ -1,10 +1,15 @@
 import gulp from 'gulp'
 import sass from 'gulp-sass'
+import concatCss from 'gulp-concat-css'
 import browserSync from 'browser-sync'
 
 //browserSync.create()
 
-const cssPath = 'src/*.sass'
+const paths = {
+  css: 'src/*.sass',
+  dist: 'dist',
+  html: 'dist/*.html'
+}
 
 gulp.task('default', ['sass'], () => {
   browserSync.init({
@@ -13,12 +18,14 @@ gulp.task('default', ['sass'], () => {
     }
   })
 
-  gulp.watch(cssPath, ['sass'])
+  gulp.watch(paths.css, ['sass'])
+  gulp.watch(paths.html, browserSync.reload)
 })
 
 gulp.task('sass', () => {
-  return gulp.src(cssPath)
+  return gulp.src(paths.css)
     .pipe(sass())
+    .pipe(concatCss('bundle.css'))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(browserSync.stream())
 })
