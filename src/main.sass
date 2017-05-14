@@ -1,5 +1,7 @@
 $primary-text-color: #323232
-$accent-text-color: #30306d
+
+*
+  box-sizing: border-box
 
 html
   font-family: 'Lato', sans-serif
@@ -7,4 +9,28 @@ html
   font-size: 14px
 
 body
-  box-sizing: border-box
+  height: 100%
+  margin: 0
+  padding: 0
+
+.overlay
+  position: absolute
+  z-index: -1
+  height: 100%
+  width: 100%
+  background: rgba(0, 0, 0, 0.5)
+
+.text-center
+  text-align: center
+
+.upper
+  text-transform: uppercase
+
+.image-responsive
+  max-width: 100%
+
+.vertical-align
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
