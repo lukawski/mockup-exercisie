@@ -29,16 +29,29 @@ body {
 .upper {
   text-transform: uppercase;
 }
+
+.image-responsive {
+  max-width: 100%;
+}
+
+.vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .modal {
   z-index: 1;
   background: white;
   width: 70%;
-  height: 70%;
   border: solid 1px #e5ceae;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
 }
 
 .modal-header {
@@ -92,4 +105,39 @@ body {
   font-size: 18px;
   padding: 5px;
   margin-left: -4%;
+}
+
+.brands-section,
+.press-section,
+.stars-section {
+  display: flex;
+}
+
+.brands-section,
+.stars-section {
+  border-bottom: solid 1px #e5ceae;
+}
+
+.stars-section {
+  padding: 10px 0;
+}
+
+.label-col {
+  width: 20%;
+  position: relative;
+  color: #929292;
+}
+
+.img-col {
+  width: 80%;
+}
+
+.stars-images {
+  text-align: center;
+}
+
+.stars-images img {
+  max-width: calc(100% / 10);
+  vertical-align: middle;
+  margin: 0 5px;
 }
